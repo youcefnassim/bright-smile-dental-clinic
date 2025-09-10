@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Médecin - Bright Smile</title>
+    <meta name="description" content="Espace de connexion sécurisé pour les médecins du cabinet Dentilus. Accédez à votre dashboard de gestion.">
+    
+    <link rel="stylesheet" href="public-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Navigation Helper -->
+    <script src="navigation-helper.js" defer></script>
+    
+    <style>
+        /* Styles spécifiques pour la page de connexion */
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fafafa 0%, #e8f4f8 100%);
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(0, 188, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            padding: 50px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .login-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .login-logo i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        .login-logo h1 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        
+        .login-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input {
+            padding: 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--card-background);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
+        }
+        
+        .form-group input.error {
+            border-color: var(--error-color);
+        }
+        
+        .form-group input.success {
+            border-color: var(--success-color);
+        }
+        
+        .password-toggle {
+            position: relative;
+        }
+        
+        .password-toggle input {
+            padding-right: 50px !important;
+        }
+        
+        .password-toggle button {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            z-index: 10;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .password-toggle button:hover {
+            color: var(--primary-color);
+        }
+        
+        .password-toggle button:focus {
+            outline: none;
+        }
+        
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .remember-me input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-color);
+        }
+        
+        .remember-me label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .forgot-password:hover {
+            color: var(--secondary-color);
+        }
+        
+        .login-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+        }
+        
+        .login-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .login-button .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .back-to-site {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .back-to-site:hover {
+            color: var(--primary-color);
+        }
+        
+        .error-message {
+            background: rgba(244, 67, 54, 0.1);
+            color: var(--error-color);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--error-color);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .success-message {
+            background: rgba(76, 175, 80, 0.1);
+            color: var(--success-color);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--success-color);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+            
+            .login-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .login-logo i {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-tooth"></i>
+                    <h1>Bright Smile</h1>
+                </div>
+                <p class="login-subtitle">Connexion - Espace Patient & Médecin</p>
+            </div>
+            
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorText">Identifiants incorrects. Veuillez réessayer.</span>
+            </div>
+            
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <span>Connexion réussie ! Redirection en cours...</span>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email professionnel</label>
+                    <input type="email" id="email" name="email" required placeholder="admin@brightsmile.dz">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <div class="password-toggle">
+                        <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
+                        <button type="button" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="login-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+                
+                <button type="submit" class="login-button" id="loginButton">
+                    <div class="spinner" id="loginSpinner"></div>
+                    <span id="loginButtonText">Se connecter</span>
+                </button>
+            </form>
+            
+            <div class="login-footer">
+                <a href="index-public.html" class="back-to-site">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour au site public
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestion de l'affichage/masquage du mot de passe
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('passwordToggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+        
+        // Empêcher la soumission du formulaire lors du clic sur le bouton toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.password-toggle button');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            }
+        });
+        
+        // Gestion du formulaire de connexion
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Validation des champs
+            if (!email || !password) {
+                showError('Veuillez remplir tous les champs.');
+                return;
+            }
+            
+            // Simulation de la connexion
+            showLoading();
+            
+            // Simuler une requête API
+            setTimeout(() => {
+                // Identifiants de test (à remplacer par une vraie authentification)
+                if ((email === 'admin@brightsmile.dz' && password === 'password123') || 
+                    (email === 'doctor@brightsmile.dz' && password === 'password123') ||
+                    (email === 'admin@dentilus.fr' && password === 'admin123')) {
+                    showSuccess();
+                    
+                    // Sauvegarder la session si "Se souvenir de moi" est coché
+                    if (remember) {
+                        localStorage.setItem('dentilus_remember', 'true');
+                        localStorage.setItem('dentilus_email', email);
+                        localStorage.setItem('dentilus_user_name', 'Dr. Ayad Soumia');
+                        localStorage.setItem('dentilus_login_time', new Date().toISOString());
+                    }
+                    
+                    // Notification de succès avec navigation helper
+                    if (window.NavigationHelper) {
+                        NavigationHelper.showCrossSiteNotification('Connexion réussie ! Redirection vers l\'espace médecin...', 'success');
+                    }
+                    
+                    // Redirection vers le dashboard après 2 secondes
+                    setTimeout(() => {
+                        window.location.href = 'Espace medecin/espace-medecin.html';
+                    }, 2000);
+                } else {
+                    showError('Email ou mot de passe incorrect.');
+                    hideLoading();
+                }
+            }, 1500);
+        });
+        
+        function showLoading() {
+            const button = document.getElementById('loginButton');
+            const spinner = document.getElementById('loginSpinner');
+            const buttonText = document.getElementById('loginButtonText');
+            
+            button.disabled = true;
+            spinner.style.display = 'inline-block';
+            buttonText.textContent = 'Connexion...';
+        }
+        
+        function hideLoading() {
+            const button = document.getElementById('loginButton');
+            const spinner = document.getElementById('loginSpinner');
+            const buttonText = document.getElementById('loginButtonText');
+            
+            button.disabled = false;
+            spinner.style.display = 'none';
+            buttonText.textContent = 'Se connecter';
+        }
+        
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            const successDiv = document.getElementById('successMessage');
+            
+            errorText.textContent = message;
+            errorDiv.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            // Masquer l'erreur après 5 secondes
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        function showSuccess() {
+            const successDiv = document.getElementById('successMessage');
+            const errorDiv = document.getElementById('errorMessage');
+            
+            successDiv.style.display = 'block';
+            errorDiv.style.display = 'none';
+        }
+        
+        // Vérifier si l'utilisateur est déjà connecté
+        document.addEventListener('DOMContentLoaded', function() {
+            const isRemembered = localStorage.getItem('dentilus_remember');
+            const savedEmail = localStorage.getItem('dentilus_email');
+            
+            if (isRemembered === 'true' && savedEmail) {
+                document.getElementById('email').value = savedEmail;
+                document.getElementById('remember').checked = true;
+            }
+        });
+        
+        // Gestion du lien "Mot de passe oublié"
+        document.querySelector('.forgot-password').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Fonctionnalité de réinitialisation de mot de passe à implémenter.\n\nContactez l\'administrateur système pour réinitialiser votre mot de passe.');
+        });
+        
+        // Validation en temps réel
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.classList.add('error');
+                this.classList.remove('success');
+            } else if (email) {
+                this.classList.remove('error');
+                this.classList.add('success');
+            }
+        });
+        
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            
+            if (password.length > 0 && password.length < 6) {
+                this.classList.add('error');
+                this.classList.remove('success');
+            } else if (password.length >= 6) {
+                this.classList.remove('error');
+                this.classList.add('success');
+            }
+        });
+    </script>
+</body>
+</html>

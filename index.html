@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Smile - Cabinet Dentaire Moderne | Votre Sourire, Notre Passion</title>
+    <meta name="description" content="Cabinet dentaire moderne Bright Smile. Services de dentisterie esthétique, implants, orthodontie. Prenez rendez-vous en ligne. Équipe professionnelle et technologies de pointe.">
+    <meta name="keywords" content="dentiste, cabinet dentaire, dentisterie esthétique, implants dentaires, orthodontie, blanchiment dentaire, facettes">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dentilus.fr/">
+    <meta property="og:title" content="Bright Smile - Cabinet Dentaire Moderne">
+    <meta property="og:description" content="Votre sourire, notre passion. Services de dentisterie moderne et esthétique.">
+    <meta property="og:image" content="https://dentilus.fr/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dentilus.fr/">
+    <meta property="twitter:title" content="Bright Smile - Cabinet Dentaire Moderne">
+    <meta property="twitter:description" content="Votre sourire, notre passion. Services de dentisterie moderne et esthétique.">
+    <meta property="twitter:image" content="https://dentilus.fr/images/og-image.jpg">
+
+    <link rel="stylesheet" href="public-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Navigation Helper -->
+    <script src="navigation-helper.js" defer></script>
+    <!-- API Integration -->
+    <script src="api-config.js" defer></script>
+    <script src="api-client.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#accueil" class="logo">
+                <img src="logo.jpg" alt="Bright Smile" class="logo-img">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="Espace medecin/services-public.html">Services</a></li>
+                    <li><a href="#apropos">À Propos</a></li>
+                    <li><a href="doctor-profile.html">Dentiste</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="blog-public.html">Blog</a></li>
+                    <li><a href="patient-public.html">Espace Patient</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-only"><a href="#contact" class="mobile-cta-button">
+                        <i class="fas fa-calendar-alt"></i>
+                        Prendre un rendez-vous
+                    </a></li>
+                    <li class="mobile-only"><a href="Espace medecin/espace-medecin.html" class="mobile-doctor-login">
+                        <i class="fas fa-user-md"></i>
+                        Espace Médecin
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="access-dropdown">
+                    <button class="access-toggle">
+                        <i class="fas fa-user"></i>
+                        <span>Accès</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="Espace medecin/espace-medecin.html" class="dropdown-item">
+                            <i class="fas fa-user-md"></i>
+                            <span>Espace Médecin</span>
+                        </a>
+                        <a href="patient-public.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>Espace Patient</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Votre Sourire, Notre Passion</h1>
+            <p>Découvrez nos services de dentisterie moderne et esthétique. Une équipe professionnelle dédiée à votre bien-être bucco-dentaire avec les dernières technologies.</p>
+            <div class="hero-buttons">
+                <a href="rendez-vous.html" class="btn-primary">Prendre Rendez-vous</a>
+                <a href="Espace medecin/services-public.html" class="btn-secondary">Nos Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services</h2>
+                <p>Des soins dentaires de pointe pour votre bien-être et votre confiance</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Dentisterie Esthétique</h3>
+                    <p>Blanchiment, facettes et couronnes pour un sourire parfait et naturel</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Implants Dentaires</h3>
+                    <p>Remplacement de dents manquantes avec des implants de dernière génération</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Orthodontie</h3>
+                    <p>Aligneurs invisibles, bagues métalliques et céramiques pour un alignement parfait</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Endodontie</h3>
+                    <p>Traitements de canal avec techniques modernes et indolores</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Parodontologie</h3>
+                    <p>Soins des gencives et traitement des maladies parodontales</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Chirurgie Orale</h3>
+                    <p>Extractions, greffes osseuses et interventions chirurgicales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>À Propos de Bright Smile</h2>
+                <p>Une approche moderne et personnalisée de la dentisterie</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Excellence et Innovation</h3>
+                    <p>Depuis plus de 3 ans, Bright Smile s'engage à offrir des soins dentaires de la plus haute qualité. Notre cabinet allie tradition et innovation pour vous garantir des résultats exceptionnels.</p>
+                    <p>Nous utilisons les dernières technologies en dentisterie : scanner 3D, laser dentaire, microscopie opératoire et impression 3D pour des traitements précis et confortables.</p>
+                    <p>Dr. Ayad Soumia se forme continuellement aux nouvelles techniques pour vous offrir les meilleurs soins possibles.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Années d'expérience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2500</span>
+                            <span class="stat-label">Patients satisfaits</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98</span>
+                            <span class="stat-label">% de satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">Heures de suivi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-video">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="img/vidéo du la cabinet dentaire.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>
+                    </div>
+                    <div class="video-description">
+                        <h4>Découvrez notre cabinet dentaire Bright Smile</h4>
+                        <p>Une visite virtuelle de nos installations modernes et de notre équipement de pointe pour des soins dentaires d'excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Votre Dentiste</h2>
+                <p>Une professionnelle dévouée à votre sourire</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">AS</div>
+                    <h3 class="member-name">Dr. Ayad Soumia</h3>
+                    <p class="member-role">Chirurgien-Dentiste</p>
+                    <p class="member-bio">Spécialisée en dentisterie esthétique, implants et orthodontie. Plus 3 ans d'expérience dans les techniques modernes et les traitements innovants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Témoignages de nos Patients</h2>
+                <p>Ce que disent nos patients satisfaits</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Un service exceptionnel ! L'équipe est très professionnelle et à l'écoute. Mon sourire n'a jamais été aussi beau. Je recommande vivement !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Amina Bensalem</h4>
+                            <p>Blanchiment dentaire</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Mes aligneurs invisibles ont transformé mon sourire en seulement 6 mois. Personne n'a remarqué que je portais un appareil !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">F</div>
+                        <div class="author-info">
+                            <h4>Fatima Boumediene</h4>
+                            <p>Orthodontie invisible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galerie Avant/Après</h2>
+                <p>Découvrez les transformations de nos patients</p>
+            </div>
+            
+            <div class="gallery-slider">
+                <div class="slider-container">
+                    <div class="slider-track" id="galleryTrack">
+                        <div class="slide active">
+                            <img src="img/Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.dentaire_gmail.com___citéc_1.jpg" alt="Bright Smile Dental Clinic - Résultat de traitement">
+                        </div>
+                        <div class="slide">
+                            <img src="img/Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.dentaire_gmail.com___citéca(.jpg" alt="Bright Smile Dental Clinic - Transformation dentaire">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.de_1.jpg" alt="Nouveau sourire, nouvelle vie - Transformation 1">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.de_2.jpg" alt="Nouveau sourire, nouvelle vie - Transformation 2">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.de_3.jpg" alt="Nouveau sourire, nouvelle vie - Transformation 3">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.de_4.jpg" alt="Nouveau sourire, nouvelle vie - Transformation 4">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.de_5.jpg" alt="Nouveau sourire, nouvelle vie - Transformation 5">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.de_6.jpg" alt="Nouveau sourire, nouvelle vie - Transformation 6">
+                        </div>
+                        <div class="slide">
+                            <img src="img/New smile new life 🥰__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.den(.jpg" alt="Nouveau sourire, nouvelle vie - Résultat final">
+                        </div>
+                        <div class="slide">
+                            <img src="img/Un sourire_ une histoire_ _Blanchiment dentaire et prothèses fixes sur les deux centrales _ une transformation douce et harmonieuse pour retrouver l_écla_1.jpg" alt="Blanchiment dentaire et prothèses fixes - Avant">
+                        </div>
+                        <div class="slide">
+                            <img src="img/Un sourire_ une histoire_ _Blanchiment dentaire et prothèses fixes sur les deux centrales _ une transformation douce et harmonieuse pour retrouver l_éclat(.jpg" alt="Blanchiment dentaire et prothèses fixes - Après">
+                        </div>
+                        <div class="slide">
+                            <img src="img/👑👑__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.dentaire_gmail.co_1.jpg" alt="Couronnes dentaires - Résultat 1">
+                        </div>
+                        <div class="slide">
+                            <img src="img/👑👑__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.dentaire_gmail.co_2.jpg" alt="Couronnes dentaires - Résultat 2">
+                        </div>
+                        <div class="slide">
+                            <img src="img/👑👑__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.dentaire_gmail.co_3.jpg" alt="Couronnes dentaires - Résultat 3">
+                        </div>
+                        <div class="slide">
+                            <img src="img/👑👑__Bright smile dental clinic_📞Tel_ 05 41 70 60 27_📍cité cadi - maghnia - Rue lacoste - à côté de CNS_✉️ Brightsmile.dentaire_gmail.com(.jpg" alt="Couronnes dentaires - Transformation complète">
+                        </div>
+                    </div>
+                    
+                    <button class="slider-btn prev-btn" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+                    <span class="dot" onclick="currentSlide(11)"></span>
+                    <span class="dot" onclick="currentSlide(12)"></span>
+                    <span class="dot" onclick="currentSlide(13)"></span>
+                    <span class="dot" onclick="currentSlide(14)"></span>
+                    <span class="dot" onclick="currentSlide(15)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Space Section -->
+    <section id="espace-patient" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Espace Patient</h2>
+                <p>Accédez à votre portail patient pour gérer vos rendez-vous et suivre vos soins</p>
+            </div>
+            
+            <div class="patient-space-cta">
+                <div class="cta-content">
+                    <div class="cta-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Votre Espace Personnel</h3>
+                    <p>Connectez-vous ou créez votre compte pour accéder à tous vos services personnalisés</p>
+                    
+                    <div class="cta-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Gestion des rendez-vous</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Dossier médical</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-prescription-bottle"></i>
+                            <span>Ordonnances</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication directe</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="patient-public.html" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Accéder à mon espace
+                        </a>
+                        <a href="patient-public.html#register" class="btn-secondary">
+                            <i class="fas fa-user-plus"></i>
+                            Créer un compte
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contactez-nous</h2>
+                <p>Prenez rendez-vous ou posez-nous vos questions</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informations de Contact</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>Cité Cadi-- Rue lacoste - à côté de CNS -Maghnia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+213 5 41 70 60 27</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>contact@Bright smile.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-details">
+                            <h4>Horaires</h4>
+                            <p>Samedi-Mercredi: 9h-17h<br>Sam: 9h-17h<br>Jeudi/Vendredi: Fermé</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom complet *</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service souhaité</label>
+                            <select id="service" name="service">
+                                <option value="">Sélectionner un service</option>
+                                <option value="esthetique">Dentisterie Esthétique</option>
+                                <option value="implants">Implants Dentaires</option>
+                                <option value="orthodontie">Orthodontie</option>
+                                <option value="endodontie">Endodontie</option>
+                                <option value="parodontologie">Parodontologie</option>
+                                <option value="chirurgie">Chirurgie Orale</option>
+                                <option value="consultation">Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Décrivez votre demande ou vos questions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bright Smile</h3>
+                    <p>Votre sourire, notre passion. Un cabinet dentaire moderne dédié à votre bien-être bucco-dentaire avec les dernières technologies.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="Espace medecin/services-public.html">Dentisterie Esthétique</a></p>
+                    <p><a href="Espace medecin/services-public.html">Implants Dentaires</a></p>
+                    <p><a href="Espace medecin/services-public.html">Orthodontie</a></p>
+                    <p><a href="Espace medecin/services-public.html">Endodontie</a></p>
+                    <p><a href="Espace medecin/services-public.html">Parodontologie</a></p>
+                    <p><a href="Espace medecin/services-public.html">Chirurgie Orale</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Cité Cadi-Rue Lacoste, à côté de CNS-Maghnia</p>
+                    <p><i class="fas fa-phone"></i> +213-541-706-027</p>
+                    <p><i class="fas fa-envelope"></i> contact@Brightsmile.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p>
+                    <p><a href="https://www.instagram.com/bright_smile_dentel_clinic?utm_source=ig_web_button_share_sheet&igsh=cGlsbThqczF1N3Fq" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+                    <p><a href="#"><i class="fab fa-youtube"></i> YouTube</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bright Smile. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="public-script.js"></script>
+    <script>
+    // Direct fix for both dropdown and mobile menu
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Direct fix loading...');
+        
+        // Fix access dropdown
+        const accessDropdown = document.querySelector('.access-dropdown');
+        const accessToggle = document.querySelector('.access-toggle');
+        
+        if (accessToggle && accessDropdown) {
+            accessToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('DIRECT: Dropdown toggle clicked!');
+                accessDropdown.classList.toggle('active');
+            });
+        }
+        
+        // Fix mobile menu
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        console.log('Mobile elements:', {mobileToggle, navMenu});
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('DIRECT: Mobile toggle clicked!');
+                
+                navMenu.classList.toggle('mobile-active');
+                
+                // Change hamburger icon to X when menu is open
+                const icon = this.querySelector('i');
+                if (navMenu.classList.contains('mobile-active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('mobile-active')) {
+                        navMenu.classList.remove('mobile-active');
+                        const icon = mobileToggle.querySelector('i');
+                        icon.className = 'fas fa-bars';
+                    }
+                });
+            });
+        }
+    });
+    
+    // Si utilisateur clique sur Prendre RDV depuis le site public, rediriger vers l'interface principale et ouvrir le slide
+    if(window.location.hash === '#openBooking'){
+        // redirige vers la version interne qui contient le slide
+        window.location.href = 'index.html#openBooking';
+    }
+    </script>
+</body>
+</html>

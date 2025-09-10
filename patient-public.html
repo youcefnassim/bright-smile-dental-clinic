@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Patient - Bright Smile | Gérez vos rendez-vous en ligne</title>
+    <meta name="description" content="Accédez à votre espace patient Bright Smile. Prenez rendez-vous, consultez votre dossier médical et communiquez avec votre dentiste en ligne.">
+    <meta name="keywords" content="espace patient, rendez-vous dentiste, dossier médical, cabinet dentaire en ligne">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dentilus.fr/patient-public.html">
+    <meta property="og:title" content="Espace Patient - Bright Smile">
+    <meta property="og:description" content="Gérez vos rendez-vous et consultez votre dossier médical en ligne.">
+    <meta property="og:image" content="https://dentilus.fr/images/patient-space.jpg">
+
+    <link rel="stylesheet" href="public-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Scripts -->
+    <script src="navigation-helper.js" defer></script>
+    <script src="api-config.js" defer></script>
+    <script src="api-client.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index-public.html" class="logo">
+                <img src="logo.jpg" alt="Bright Smile" class="logo-img">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index-public.html">Accueil</a></li>
+                    <li><a href="Espace medecin/services-public.html">Services</a></li>
+                    <li><a href="index-public.html#apropos">À Propos</a></li>
+                    <li><a href="doctor-profile.html">Dentiste</a></li>
+                    <li><a href="index-public.html#temoignages">Témoignages</a></li>
+                    <li><a href="index-public.html#galerie">Galerie</a></li>
+                    <li><a href="blog-public.html">Blog</a></li>
+                    <li><a href="patient-public.html" class="active">Espace Patient</a></li>
+                    <li><a href="index-public.html#contact">Contact</a></li>
+                    <li class="mobile-only"><a href="rendez-vous.html" class="mobile-cta-button">
+                        <i class="fas fa-calendar-alt"></i>
+                        Prendre un rendez-vous
+                    </a></li>
+                    <li class="mobile-only"><a href="Espace medecin/espace-medecin.html" class="mobile-doctor-login">
+                        <i class="fas fa-user-md"></i>
+                        Espace Médecin
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="access-dropdown">
+                    <button class="access-toggle">
+                        <i class="fas fa-user"></i>
+                        <span>Accès</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="Espace medecin/espace-medecin.html" class="dropdown-item">
+                            <i class="fas fa-user-md"></i>
+                            <span>Espace Médecin</span>
+                        </a>
+                        <a href="patient-public.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>Espace Patient</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-user-circle"></i> Espace Patient</h1>
+            <p>Gérez vos rendez-vous, consultez votre dossier médical et communiquez avec votre dentiste en toute simplicité.</p>
+            <div class="hero-buttons">
+                <a href="#connexion" class="btn-primary">Se connecter</a>
+                <a href="#inscription" class="btn-secondary">Créer un compte</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Votre Espace Patient Digital</h2>
+                <p>Une plateforme moderne pour gérer tous vos soins dentaires</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Gestion des Rendez-vous</h3>
+                    <p>Prenez, modifiez ou annulez vos rendez-vous 24h/24, 7j/7 en quelques clics</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>Dossier Médical</h3>
+                    <p>Accédez à votre historique de soins, radiographies et plans de traitement</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-prescription-bottle"></i>
+                    </div>
+                    <h3>Ordonnances</h3>
+                    <p>Consultez et téléchargez vos ordonnances en format numérique</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Rappels Automatiques</h3>
+                    <p>Recevez des notifications pour vos rendez-vous et contrôles périodiques</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Communication Directe</h3>
+                    <p>Échangez avec votre dentiste via messagerie sécurisée</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Facturation</h3>
+                    <p>Consultez vos factures et effectuez vos paiements en ligne</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section id="connexion" class="section">
+        <div class="container">
+            <div class="patient-space-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="showTab('login')">
+                        <i class="fas fa-sign-in-alt"></i> Connexion
+                    </button>
+                    <button class="tab-btn" onclick="showTab('register')" id="inscription">
+                        <i class="fas fa-user-plus"></i> Inscription
+                    </button>
+                </div>
+                
+                <!-- Login Form -->
+                <div class="auth-form login-form active" id="loginForm">
+                    <div class="form-header">
+                        <h3>Connexion à votre espace</h3>
+                        <p>Accédez à vos rendez-vous et informations médicales</p>
+                    </div>
+                    
+                    <form class="patient-login-form" id="patientLoginForm">
+                        <div class="form-group">
+                            <label for="login-email">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                            <input type="email" id="login-email" name="email" required placeholder="votre.email@exemple.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password">
+                                <i class="fas fa-lock"></i>
+                                Mot de passe
+                            </label>
+                            <input type="password" id="login-password" name="password" required placeholder="Votre mot de passe">
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span class="checkmark"></span>
+                                Se souvenir de moi
+                            </label>
+                            <a href="#" class="forgot-password" onclick="showForgotPassword()">Mot de passe oublié ?</a>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Se connecter
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="auth-form register-form" id="registerForm">
+                    <div class="form-header">
+                        <h3>Créer votre compte patient</h3>
+                        <p>Rejoignez-nous pour un suivi personnalisé de vos soins</p>
+                    </div>
+                    
+                    <form class="patient-register-form" id="patientRegisterForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-firstname">
+                                    <i class="fas fa-user"></i>
+                                    Prénom *
+                                </label>
+                                <input type="text" id="register-firstname" name="firstname" required placeholder="Votre prénom">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-lastname">
+                                    <i class="fas fa-user"></i>
+                                    Nom *
+                                </label>
+                                <input type="text" id="register-lastname" name="lastname" required placeholder="Votre nom">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email">
+                                <i class="fas fa-envelope"></i>
+                                Email *
+                            </label>
+                            <input type="email" id="register-email" name="email" required placeholder="votre.email@exemple.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-phone">
+                                <i class="fas fa-phone"></i>
+                                Téléphone *
+                            </label>
+                            <input type="tel" id="register-phone" name="phone" required placeholder="+213 XX XX XX XX">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-password">
+                                    <i class="fas fa-lock"></i>
+                                    Mot de passe *
+                                </label>
+                                <input type="password" id="register-password" name="password" required placeholder="Mot de passe sécurisé">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-confirm-password">
+                                    <i class="fas fa-lock"></i>
+                                    Confirmer *
+                                </label>
+                                <input type="password" id="register-confirm-password" name="confirm_password" required placeholder="Confirmer le mot de passe">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-birthdate">
+                                    <i class="fas fa-calendar"></i>
+                                    Date de naissance *
+                                </label>
+                                <input type="date" id="register-birthdate" name="birthdate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-gender">
+                                    <i class="fas fa-venus-mars"></i>
+                                    Genre
+                                </label>
+                                <select id="register-gender" name="gender">
+                                    <option value="">Sélectionner</option>
+                                    <option value="male">Homme</option>
+                                    <option value="female">Femme</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Adresse
+                            </label>
+                            <input type="text" id="register-address" name="address" placeholder="Votre adresse complète">
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                J'accepte les <a href="#" onclick="showTerms()">conditions d'utilisation</a> et la <a href="#" onclick="showPrivacy()">politique de confidentialité</a>
+                            </label>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter">
+                                <span class="checkmark"></span>
+                                Je souhaite recevoir les actualités et conseils santé par email
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn">
+                            <i class="fas fa-user-plus"></i>
+                            Créer mon compte
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview Section -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Aperçu de votre tableau de bord</h2>
+                <p>Découvrez les fonctionnalités disponibles dans votre espace personnel</p>
+            </div>
+            
+            <div class="dashboard-preview">
+                <div class="dashboard-card">
+                    <div class="dashboard-header">
+                        <h3><i class="fas fa-tachometer-alt"></i> Tableau de bord</h3>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="dashboard-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Prochain RDV</h4>
+                                    <p>15 Sept 2024 - 14h30</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Dernière visite</h4>
+                                    <p>28 Août 2024</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-file-medical"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>Dossier médical</h4>
+                                    <p>À jour</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-actions">
+                            <button class="dashboard-btn primary">
+                                <i class="fas fa-plus"></i>
+                                Nouveau RDV
+                            </button>
+                            <button class="dashboard-btn secondary">
+                                <i class="fas fa-message"></i>
+                                Contacter
+                            </button>
+                            <button class="dashboard-btn secondary">
+                                <i class="fas fa-download"></i>
+                                Télécharger
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Besoin d'aide ?</h2>
+                <p>Notre équipe est là pour vous accompagner dans l'utilisation de votre espace patient</p>
+                <div class="cta-buttons">
+                    <a href="index-public.html#contact" class="btn-primary">Nous contacter</a>
+                    <a href="tel:+213541706027" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        05 41 70 60 27
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bright Smile</h3>
+                    <p>Votre sourire, notre passion. Un cabinet dentaire moderne dédié à votre bien-être bucco-dentaire avec les dernières technologies.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Cité Cadi - Rue lacoste - à côté de CNS - Maghnia</p>
+                        <p><i class="fas fa-phone"></i> +213 5 41 70 60 27</p>
+                        <p><i class="fas fa-envelope"></i> contact@brightsmile.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="Espace medecin/services-public.html">Dentisterie Esthétique</a></li>
+                        <li><a href="Espace medecin/services-public.html">Implants Dentaires</a></li>
+                        <li><a href="Espace medecin/services-public.html">Orthodontie</a></li>
+                        <li><a href="Espace medecin/services-public.html">Endodontie</a></li>
+                        <li><a href="Espace medecin/services-public.html">Parodontologie</a></li>
+                        <li><a href="Espace medecin/services-public.html">Chirurgie Orale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liens Utiles</h3>
+                    <ul>
+                        <li><a href="index-public.html">Accueil</a></li>
+                        <li><a href="doctor-profile.html">Notre Dentiste</a></li>
+                        <li><a href="blog-public.html">Blog</a></li>
+                        <li><a href="rendez-vous.html">Prendre RDV</a></li>
+                        <li><a href="patient-public.html">Espace Patient</a></li>
+                        <li><a href="Espace medecin/espace-medecin.html">Espace Médecin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <div class="schedule">
+                        <p><strong>Samedi - Mercredi:</strong> 9h - 17h</p>
+                        <p><strong>Jeudi - Vendredi:</strong> Fermé</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bright Smile. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all forms
+            document.querySelectorAll('.auth-form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected form and activate tab
+            if (tabName === 'login') {
+                document.getElementById('loginForm').classList.add('active');
+                document.querySelector('.tab-btn').classList.add('active');
+            } else if (tabName === 'register') {
+                document.getElementById('registerForm').classList.add('active');
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+            }
+        }
+
+        // Form submission handlers
+        document.getElementById('patientLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add login logic here
+            alert('Fonctionnalité de connexion en cours de développement');
+        });
+
+        document.getElementById('patientRegisterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add registration logic here
+            alert('Fonctionnalité d\'inscription en cours de développement');
+        });
+
+        // Forgot password functionality
+        function showForgotPassword() {
+            alert('Fonctionnalité de récupération de mot de passe en cours de développement');
+        }
+
+        // Terms and privacy policy
+        function showTerms() {
+            alert('Conditions d\'utilisation - En cours de rédaction');
+        }
+
+        function showPrivacy() {
+            alert('Politique de confidentialité - En cours de rédaction');
+        }
+
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('mobile-active');
+        });
+
+        // Access dropdown functionality
+        document.querySelector('.access-toggle').addEventListener('click', function() {
+            document.querySelector('.access-dropdown').classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.access-dropdown')) {
+                document.querySelector('.access-dropdown').classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
