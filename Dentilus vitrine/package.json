@@ -1,0 +1,32 @@
+{
+  "name": "bright-smile-dental-clinic",
+  "version": "1.0.0",
+  "description": "Modern dental clinic website with patient management and appointment booking",
+  "main": "index-public.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server .",
+    "build": "echo 'Static website - no build required'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "healthcare",
+    "appointment-booking",
+    "patient-management",
+    "website",
+    "responsive"
+  ],
+  "author": "Dr. Ayad Soumia - Bright Smile Dental Clinic",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youcefnassim/bright-smile-dental-clinic.git"
+  },
+  "homepage": "https://youcefnassim.github.io/bright-smile-dental-clinic",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  }
+}

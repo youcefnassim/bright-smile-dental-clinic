@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Médecin - Dr. Ayad Soumia | Bright Smile Dental Clinic</title>
+    <meta name="description" content="Espace professionnel du Dr. Ayad Soumia - Gestion des patients, rendez-vous, dossiers médicaux et outils de diagnostic dentaire.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Navigation Helper -->
+    <script src="../navigation-helper.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="../index-public.html" class="logo">
+                <img src="../logo.jpg" alt="Bright Smile" class="logo-img">
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index-public.html">Accueil</a></li>
+                    <li><a href="services-public.html">Services</a></li>
+                    <li><a href="../index-public.html#apropos">À Propos</a></li>
+                    <li><a href="../doctor-profile.html">Dentiste</a></li>
+                    <li><a href="../index-public.html#temoignages">Témoignages</a></li>
+                    <li><a href="../index-public.html#galerie">Galerie</a></li>
+                    <li><a href="../blog-public.html">Blog</a></li>
+                    <li><a href="../index-public.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="access-dropdown">
+                    <button class="access-toggle">
+                        <i class="fas fa-user-md"></i>
+                        <span>Dr. Ayad Soumia</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" onclick="handleQuickAction('Paramètres')">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Profil</span>
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="handleQuickAction('Paramètres')">
+                            <i class="fas fa-cog"></i>
+                            <span>Paramètres</span>
+                        </a>
+                        <a href="../index-public.html" class="dropdown-item">
+                            <i class="fas fa-home"></i>
+                            <span>Site Public</span>
+                        </a>
+                        <a href="../login.html" class="dropdown-item" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Déconnexion</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="doctor-dashboard">
+        <div class="dashboard-header">
+            <div class="container">
+                <div class="doctor-profile">
+                    <div class="doctor-avatar">AS</div>
+                    <div class="doctor-info">
+                        <h1>Dr. Ayad Soumia</h1>
+                        <p>Chirurgien-Dentiste | Bright Smile Dental Clinic</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <span class="stat-number">12</span>
+                        <div class="stat-label">RDV Aujourd'hui</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="stat-number">2,547</span>
+                        <div class="stat-label">Patients Totaux</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <span class="stat-number">3</span>
+                        <div class="stat-label">En Attente</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="stat-number">98%</span>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="dashboard-content">
+                <!-- Rendez-vous du jour -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Rendez-vous du Jour</h3>
+                        <a href="#" class="card-action">Voir Tout</a>
+                    </div>
+                    
+                    <ul class="appointment-list">
+                        <li class="appointment-item">
+                            <div class="appointment-time">09:00</div>
+                            <div class="appointment-patient">
+                                <div class="patient-name">Amina Bensalem</div>
+                                <div class="patient-last-visit">Contrôle de routine</div>
+                            </div>
+                            <div class="appointment-type">Consultation</div>
+                        </li>
+                        
+                        <li class="appointment-item">
+                            <div class="appointment-time">10:30</div>
+                            <div class="appointment-patient">
+                                <div class="patient-name">Youcef Meziane</div>
+                                <div class="patient-last-visit">Suivi implant</div>
+                            </div>
+                            <div class="appointment-type">Implant</div>
+                        </li>
+                        
+                        <li class="appointment-item">
+                            <div class="appointment-time">14:00</div>
+                            <div class="appointment-patient">
+                                <div class="patient-name">Fatima Boumediene</div>
+                                <div class="patient-last-visit">Blanchiment dentaire</div>
+                            </div>
+                            <div class="appointment-type">Esthétique</div>
+                        </li>
+                        
+                        <li class="appointment-item">
+                            <div class="appointment-time">15:30</div>
+                            <div class="appointment-patient">
+                                <div class="patient-name">Karim Hadj Ahmed</div>
+                                <div class="patient-last-visit">Détartrage</div>
+                            </div>
+                            <div class="appointment-type">Hygiène</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Patients Récents -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Patients Récents</h3>
+                        <a href="#" class="card-action">Dossiers</a>
+                    </div>
+                    
+                    <div class="patient-list">
+                        <div class="patient-item">
+                            <div class="patient-avatar">AB</div>
+                            <div class="patient-info">
+                                <div class="patient-name">Amina Bensalem</div>
+                                <div class="patient-last-visit">Dernière visite: 15 Jan 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="patient-item">
+                            <div class="patient-avatar">YM</div>
+                            <div class="patient-info">
+                                <div class="patient-name">Youcef Meziane</div>
+                                <div class="patient-last-visit">Dernière visite: 12 Jan 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="patient-item">
+                            <div class="patient-avatar">FB</div>
+                            <div class="patient-info">
+                                <div class="patient-name">Fatima Boumediene</div>
+                                <div class="patient-last-visit">Dernière visite: 10 Jan 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="patient-item">
+                            <div class="patient-avatar">KH</div>
+                            <div class="patient-info">
+                                <div class="patient-name">Karim Hadj Ahmed</div>
+                                <div class="patient-last-visit">Dernière visite: 8 Jan 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Actions Rapides -->
+            <div class="quick-actions">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <div class="action-title">Nouveau Rendez-vous</div>
+                    <div class="action-description">Planifier un nouveau rendez-vous patient</div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="action-title">Nouveau Patient</div>
+                    <div class="action-description">Ajouter un nouveau patient au système</div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="action-title">Plans de Traitement</div>
+                    <div class="action-description">Gérer les plans de traitement actifs</div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="action-title">Inventaire</div>
+                    <div class="action-description">Gérer l'inventaire et les commandes</div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="action-title">Rapports</div>
+                    <div class="action-description">Consulter les statistiques et rapports</div>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="action-title">Paramètres</div>
+                    <div class="action-description">Configuration du cabinet et préférences</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- API Integration -->
+    <script src="../api-config.js"></script>
+    <script src="../api-client.js"></script>
+    <script src="../doctor-dashboard-backend.js"></script>
+</body>
+</html>
